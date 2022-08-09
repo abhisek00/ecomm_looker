@@ -32,7 +32,7 @@ view: products {
   dimension: distribution_center_id {
     type: string
     # hidden: yes
-    sql: ${TABLE}.distribution_center_id ;;
+    sql: CAST (${TABLE}.distribution_center_id AS int);;
   }
 
   dimension: name {
