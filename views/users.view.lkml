@@ -1,4 +1,6 @@
+include: location.view
 view: users {
+  extends: [location]
   sql_table_name: `looker-private-demo.ecomm.users`
     ;;
   drill_fields: [id]
@@ -14,10 +16,10 @@ view: users {
     sql: ${TABLE}.age ;;
   }
 
-  dimension: city {
-    type: string
-    sql: ${TABLE}.city ;;
-  }
+  # dimension: city {
+  #   type: string
+  #   sql: ${TABLE}.city ;;
+  # }
   # Liquid example
   dimension: city_link {
     type: string
@@ -48,11 +50,11 @@ view: users {
   }
 
 
-  dimension: country {
-    type: string
-    map_layer_name: countries
-    sql: ${TABLE}.country ;;
-  }
+  # dimension: country {
+  #   type: string
+  #   map_layer_name: countries
+  #   sql: ${TABLE}.country ;;
+  # }
 
   dimension_group: created {
     type: time
@@ -88,30 +90,30 @@ view: users {
     sql: ${TABLE}.last_name ;;
   }
 
-  dimension: latitude {
-    type: number
-    sql: ${TABLE}.latitude ;;
-  }
+  # dimension: latitude {
+  #   type: number
+  #   sql: ${TABLE}.latitude ;;
+  # }
 
-  dimension: longitude {
-    type: number
-    sql: ${TABLE}.longitude ;;
-  }
+  # dimension: longitude {
+  #   type: number
+  #   sql: ${TABLE}.longitude ;;
+  # }
 
-  dimension: state {
-    type: string
-    sql: ${TABLE}.state ;;
-  }
+  # dimension: state {
+  #   type: string
+  #   sql: ${TABLE}.state ;;
+  # }
 
   dimension: traffic_source {
     type: string
     sql: ${TABLE}.traffic_source ;;
   }
 
-  dimension: zip {
-    type: zipcode
-    sql: ${TABLE}.zip ;;
-  }
+  # dimension: zip {
+  #   type: zipcode
+  #   sql: ${TABLE}.zip ;;
+  # }
 
   measure: count {
     type: count

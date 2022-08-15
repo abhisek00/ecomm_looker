@@ -1,4 +1,6 @@
+include: location.view
 view: events {
+  extends: [location]
   sql_table_name: `looker-private-demo.ecomm.events`
     ;;
   drill_fields: [id]
@@ -19,16 +21,16 @@ view: events {
     sql: ${TABLE}.browser ;;
   }
 
-  dimension: city {
-    type: string
-    sql: ${TABLE}.city ;;
-  }
+  # dimension: city {
+  #   type: string
+  #   sql: ${TABLE}.city ;;
+  # }
 
-  dimension: country {
-    type: string
-    map_layer_name: countries
-    sql: ${TABLE}.country ;;
-  }
+  # dimension: country {
+  #   type: string
+  #   map_layer_name: countries
+  #   sql: ${TABLE}.country ;;
+  # }
 
   dimension_group: created {
     type: time
@@ -54,15 +56,15 @@ view: events {
     sql: ${TABLE}.ip_address ;;
   }
 
-  dimension: latitude {
-    type: number
-    sql: ${TABLE}.latitude ;;
-  }
+  # dimension: latitude {
+  #   type: number
+  #   sql: ${TABLE}.latitude ;;
+  # }
 
-  dimension: longitude {
-    type: number
-    sql: ${TABLE}.longitude ;;
-  }
+  # dimension: longitude {
+  #   type: number
+  #   sql: ${TABLE}.longitude ;;
+  # }
 
   dimension: os {
     type: string
@@ -84,10 +86,10 @@ view: events {
     sql: ${TABLE}.session_id ;;
   }
 
-  dimension: state {
-    type: string
-    sql: ${TABLE}.state ;;
-  }
+  # dimension: state {
+  #   type: string
+  #   sql: ${TABLE}.state ;;
+  # }
 
   dimension: traffic_source {
     type: string
@@ -105,10 +107,10 @@ view: events {
     sql: ${TABLE}.user_id ;;
   }
 
-  dimension: zip {
-    type: zipcode
-    sql: ${TABLE}.zip ;;
-  }
+  # dimension: zip {
+  #   type: zipcode
+  #   sql: ${TABLE}.zip ;;
+  # }
 
   measure: count {
     type: count
