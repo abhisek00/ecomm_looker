@@ -1,7 +1,9 @@
 - dashboard: business_pulse
-  title: Business Pulse
+  title: Abhi Business Pulse
   layout: newspaper
   preferred_viewer: dashboards-next
+  description: ''
+  preferred_slug: xPBW6fKpp2yRJ5TIeS2DyU
   embed_style:
     background_color: "#2f6194"
     show_title: true
@@ -59,7 +61,7 @@
       City: users.city
       Brand: products.brand
     row: 0
-    col: 13
+    col: 7
     width: 5
     height: 4
   - title: Marketing Channel by User Demographic
@@ -113,8 +115,8 @@
       State: users.state
       City: users.city
       Brand: products.brand
-    row: 12
-    col: 12
+    row: 15
+    col: 1
     width: 11
     height: 7
   - title: Orders by Day and Category
@@ -173,7 +175,7 @@
       State: users.state
       City: users.city
       Brand: products.brand
-    row: 4
+    row: 7
     col: 1
     width: 22
     height: 8
@@ -214,8 +216,8 @@
       Date: order_items.created_date
       State: users.state
       City: users.city
-    row: 12
-    col: 1
+    row: 0
+    col: 12
     width: 11
     height: 7
   - title: New Users Acquired
@@ -225,12 +227,12 @@
     type: single_value
     fields: [users.count]
     filters:
-      users.created_date: 2020 #users.created_date: 90 days
+      users.created_date: '2020'
     sorts: [order_items.order_count desc]
     limit: 500
     column_limit: 50
     dynamic_fields: [{table_calculation: goal, label: Goal, expression: '39000', value_format: !!null '',
-        value_format_name: decimal_0, _kind_hint: dimension, _type_hint: number}] #expression: '10000'
+        value_format_name: decimal_0, _kind_hint: dimension, _type_hint: number}]
     query_timezone: America/Los_Angeles
     custom_color_enabled: true
     custom_color: ''
@@ -272,7 +274,7 @@
       City: users.city
       Brand: products.brand
     row: 0
-    col: 4
+    col: 1
     width: 6
     height: 4
   - title: User Behavior by Traffic Source
@@ -331,15 +333,15 @@
       State: users.state
       City: users.city
       Brand: products.brand
-    row: 19
-    col: 7
+    row: 15
+    col: 12
     width: 11
     height: 7
   filters:
   - name: Date
     title: Date
     type: date_filter
-    #default_value: 90 days
+    default_value:
     allow_multiple_values: true
     required: false
     ui_config:
