@@ -104,7 +104,7 @@ view: order_items {
 
   measure: order_item_count {
     type: count
-    drill_fields: [inventory_items.id]
+    drill_fields: [detail*]
   }
 
   measure: order_count {
