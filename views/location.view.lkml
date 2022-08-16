@@ -28,4 +28,9 @@ view: location {
     type: number
     sql: ${TABLE}.longitude ;;
   }
+
+  measure: zip_length {
+    type: number
+    sql: Length(${zip});;
+  }
 }
