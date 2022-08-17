@@ -4,7 +4,7 @@ view: order_items {
   drill_fields: [order_item_id]
 
   dimension: order_item_id {
-    primary_key: yes
+      primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
   }
@@ -104,7 +104,7 @@ view: order_items {
 
   measure: order_item_count {
     type: count
-    drill_fields: [users.first_name,users.last_name]
+    drill_fields: [detail*]
   }
 
   measure: order_count {
