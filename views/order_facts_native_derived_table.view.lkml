@@ -1,30 +1,25 @@
-# If necessary, uncomment the line below to include explore_source.
-# include: "training_ecommerce.model.lkml"
+# rank brands by total revenue and that can be filtered using a dynamic date range and/or user inputs.
 
 view: order_facts_native_derived_table {
   derived_table: {
     explore_source: order_items {
-      column: order_id {}
-      column: user_id {}
-      column: order_item_count {}
+      column: brand { field: products.brand }
       column: total_revenue {}
+      derived_column: brand_rank {
+        sql: row_number() over (order by total_revenue desc) ;;
+      }
     }
   }
-  dimension: order_id {
+  dimension: brand {
     description: ""
-    type: number
-  }
-  dimension: user_id {
-    description: ""
-    type: number
-  }
-  dimension: order_item_count {
-    description: ""
-    type: number
   }
   dimension: total_revenue {
     description: ""
     value_format: "$#,##0.00"
+    type: number
+  }
+
+  dimension: brand_rank {
     type: number
   }
 }

@@ -29,6 +29,12 @@ explore: order_items {
     relationship: many_to_one
   }
 
+  join: order_facts_native_derived_table {
+    type: left_outer
+    sql_on: ${inventory_items.product_brand} = ${order_facts_native_derived_table.brand} ;;
+    relationship: many_to_one
+  }
+
   join: inventory_items {
     type: left_outer
     sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
