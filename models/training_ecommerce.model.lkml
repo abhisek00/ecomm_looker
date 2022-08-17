@@ -19,7 +19,7 @@ explore: order_items {
   join: users {
     type: left_outer
     sql_on: ${order_items.user_id} = ${users.id} ;;
-    relationship: many_to_one
+    relationship: many_to_many
   }
 # The relationship parameter identifies that there are potentially many instances of an user_id in order_items but
 # only one instance of each user_id in user_facts, which is organized as one summary row for each order.
