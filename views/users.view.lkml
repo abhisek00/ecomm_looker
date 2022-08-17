@@ -115,6 +115,7 @@ view: users {
 
   measure: count {
     type: count
-    drill_fields: [id, last_name, first_name, order_items.count, events.count]
+    drill_fields: [id, last_name, first_name]
+    #  order_items.count, events.count
   }
 }
