@@ -52,6 +52,13 @@ view: users {
     type: string
     map_layer_name: countries
     sql: ${TABLE}.country ;;
+    }
+
+  dimension: country_final {
+    type: string
+    map_layer_name: countries
+    sql: if(UPPER(${country}) ='UK','GBR',${country});;
+    drill_fields: [state, city]
   }
 
   dimension_group: created {
@@ -101,7 +108,10 @@ view: users {
   dimension: state {
     type: string
     sql: ${TABLE}.state ;;
+    drill_fields: [city]
   }
+
+
 
   dimension: traffic_source {
     type: string
