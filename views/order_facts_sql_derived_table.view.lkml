@@ -9,8 +9,16 @@ view: order_facts_sql_derived_table {
           ,MIN(order_items.created_at) AS first_order_date
           ,MAX(order_items.created_at) AS latest_order_date
       FROM looker-private-demo.ecomm.order_items
+      WHERE {% condition select_date %} order_items.created_at {% endcondition %}
       GROUP BY user_id
        ;;
+  }
+
+# Filter concept
+  filter: select_date {
+    type: date
+    suggest_explore: order_items
+    suggest_dimension: order_items.created_date
   }
 
   dimension: user_id {
