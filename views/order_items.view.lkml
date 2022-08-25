@@ -104,7 +104,7 @@ view: order_items {
 
   measure: order_item_count {
     type: count
-    drill_fields: [detail*]
+    drill_fields: [users.first_name,users.last_name]
   }
 
   measure: order_count {
@@ -148,7 +148,7 @@ view: order_items {
 
 
   # ----- Sets of fields for drilling ------
-  set: detail {
+ set: detail {
     fields: [
       order_item_id,
       users.last_name,
@@ -156,7 +156,7 @@ view: order_items {
       users.first_name,
       inventory_items.id,
       inventory_items.product_name
-    ]
+    ] #
   }
 
 }
