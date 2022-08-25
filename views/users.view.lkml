@@ -21,6 +21,7 @@ view: users {
   #   sql: ${TABLE}.city ;;
   # }
   # Liquid example
+
   dimension: city_link {
     type: string
     sql: ${TABLE}.city ;;
@@ -30,6 +31,7 @@ view: users {
       icon_url: "http://www.google.com/s2/favicons?domain=www.{{ value | url_encode }}.com"
     }
   }
+
 
   dimension: order_history_button {
     label: "Order History"
