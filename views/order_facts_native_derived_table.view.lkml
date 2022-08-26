@@ -9,6 +9,7 @@ view: order_facts_native_derived_table {
         sql: row_number() over (order by total_revenue desc) ;;
       }
     }
+    datagroup_trigger: training_ecommerce_default_datagroup
   }
   dimension: brand {
     description: ""

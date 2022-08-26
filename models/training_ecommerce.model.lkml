@@ -7,7 +7,7 @@ include: "/z_tests/*.lkml"
 include: "/**/*.dashboard"
 
 datagroup: training_ecommerce_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
+  sql_trigger: SELECT CURRENT_DATE();;
   max_cache_age: "1 hour"
 }
 
