@@ -23,6 +23,7 @@ view: order_items {
     sql: ${TABLE}.created_at ;;
   }
 
+
   dimension_group: delivered {
     type: time
     timeframes: [
