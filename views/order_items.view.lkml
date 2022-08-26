@@ -141,6 +141,12 @@ view: order_items {
           ;;
   }
 
+  dimension: week_formatted {
+    group_label: "Created" label: "Week"
+    sql: ${TABLE}.created_at ;;
+    html: {{ rendered_value | date: "Week %U (%b %d)" }};;
+  }
+
 
   # ----- Sets of fields for drilling ------
  set: detail {

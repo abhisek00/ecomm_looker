@@ -21,19 +21,8 @@ explore: order_items {
     sql_on: ${order_items.user_id} = ${users.id} ;;
     relationship: many_to_many
   }
-# The relationship parameter identifies that there are potentially many instances of an user_id in order_items but
-# only one instance of each user_id in user_facts, which is organized as one summary row for each order.
-  join: order_facts_sql_derived_table {
-    type: left_outer
-    sql_on: ${order_items.user_id} = ${order_facts_sql_derived_table.user_id} ;;
-    relationship: many_to_one
-  }
 
-  join: order_facts_native_derived_table {
-    type: left_outer
-    sql_on: ${inventory_items.product_brand} = ${order_facts_native_derived_table.brand} ;;
-    relationship: many_to_one
-  }
+
 
   join: inventory_items {
     type: left_outer
